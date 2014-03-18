@@ -35,8 +35,9 @@ nosetests.xml
 .project
 .pydevproject
 
-# imgur_client_id file
+# Project dummies
 imgur_client_id
+capture.jpg
 
 # OS X
 .DS_Store
