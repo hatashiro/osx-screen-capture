@@ -31,6 +31,12 @@ How To Use
 $ python capture.py
 ```
 
+Or just
+
+```
+$ open applescript/capture.scpt
+```
+
 And the link will be copied to clipboard with an OS X notification after the upload's done.
 
 License
