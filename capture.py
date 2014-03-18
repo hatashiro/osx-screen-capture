@@ -36,7 +36,7 @@ def upload_to_imgur():
     pb = AppKit.NSPasteboard.generalPasteboard()
     pb.clearContents()
     pb.writeObjects_(AppKit.NSArray.arrayWithObject_(uploaded_image.link))
-    os.system("terminal-notifier -title 'Screencapture' -message 'Screencapture link is pasted into clipboard!'")
+    os.system("terminal-notifier -title 'Screencapture' -message 'Screencapture link is copied to clipboard!'")
 
 def remove_uploaded_file():
     os.system('rm ' + CAPTURE_FILE_NAME)
