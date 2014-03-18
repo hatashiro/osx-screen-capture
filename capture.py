@@ -3,7 +3,14 @@ import AppKit
 import os
 import pyimgur
 
-CAPTURE_FILE_NAME = 'capture.jpg'
+_abs_dir = None
+def abs_path(path):
+    global _abs_dir
+    if not _abs_dir:
+        _abs_dir = os.path.dirname(os.path.abspath(__file__))
+    return os.path.join(_abs_dir, path)
+
+CAPTURE_FILE_NAME = abs_path('capture.jpg')
 
 def get_current_screen_rect():
     mouse_location = AppKit.NSEvent.mouseLocation()
@@ -26,7 +33,7 @@ def capture_current_screen():
 
 def upload_to_imgur():
     # Read client id
-    imgur_client_id_file = open('imgur_client_id')
+    imgur_client_id_file = open(abs_path('imgur_client_id'))
     imgur_client_id = imgur_client_id_file.read().strip()
     imgur_client_id_file.close()
 
